@@ -29,9 +29,9 @@
     "waterline-sql-builder": "^1.0.0"
   },
   "devDependencies": {
-    "benchmark": "2.1.1",
-    "eslint": "^6.7.2",
-    "mocha": "^6.2.2"
+    "benchmark": "^2.1.4",
+    "eslint": "^7.6.0",
+    "mocha": "^8.1.1"
   },
   "machinepack": {
     "friendlyName": "PostgreSQL",
