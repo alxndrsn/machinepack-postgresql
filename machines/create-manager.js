@@ -133,6 +133,19 @@ module.exports = {
     // Feel free to fork this driver and customize as you see fit.  Also note that
     // contributions to the core driver in this area are welcome and greatly appreciated!
 
+    if(inputs.pool) {
+      // User-supplied pool makes other settings irrelevant.
+      var additionalKeys = Object
+        .keys(inputs)
+        .filter(function(k) {
+          return k !== 'pool';
+        });
+      if(additionalKeys.length) {
+        console.warn('Unexpected additional config supplied alongside pg pool; these will be ignored:', additionalKeys);
+      }
+      return exits.success({ manager:{ pool:inputs.pool } });
+    }
+
 
     // Build a local variable (`_clientConfig`) to house a dictionary
     // of additional Postgres options that will be passed into `.createPool()`
