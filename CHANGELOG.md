@@ -1,3 +1,12 @@
+2020-08-27 | v1.0.2-3 -> v1.0.2-4
+=================================
+* Allow configuring with a custom pool object
+* Update sub-dependencies
+* Bump eslint dependency
+* Bump lodash dependency
+* Remove unreferenced jshint config file
+* Update dev dependencies
+
 2020-08-05 | v1.0.2-2 -> v1.0.2-3
 =================================
 * Update dependencies: pg, lodash
