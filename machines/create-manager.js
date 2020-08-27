@@ -52,7 +52,7 @@ module.exports = {
     meta: {
       friendlyName: 'Meta (custom)',
       description: 'Additional PostgreSQL-specific options to use when connecting.',
-      extendedDescription: 'If specified, should be a dictionary. If there is a conflict between something provided in the connection string, and something in `meta`, the connection string takes priority.',
+      extendedDescription: 'If specified, should be a dictionary. If there is a conflict between something provided in the connection string, and something in `meta`, the connection string, read the code to determine the effect.',
       moreInfoUrl: 'https://github.com/coopernurse/node-pool#documentation',
       example: '==='
     }
@@ -133,17 +133,17 @@ module.exports = {
     // Feel free to fork this driver and customize as you see fit.  Also note that
     // contributions to the core driver in this area are welcome and greatly appreciated!
 
-    if(inputs.pool) {
+    if(inputs.meta && inputs.meta.pool) {
       // User-supplied pool makes other settings irrelevant.
       var additionalKeys = Object
-        .keys(inputs)
+        .keys(inputs.meta)
         .filter(function(k) {
           return k !== 'pool';
         });
       if(additionalKeys.length) {
         console.warn('Unexpected additional config supplied alongside pg pool; these will be ignored:', additionalKeys);
       }
-      return exits.success({ manager:{ pool:inputs.pool } });
+      return exits.success({ manager:{ pool:inputs.meta.pool } });
     }
 
 
