@@ -1,3 +1,7 @@
+2020-08-27 | v1.0.2-4 -> v1.0.2-5
+=================================
+* Get pre-defined pool from inputs.meta instead of inputs
+
 2020-08-27 | v1.0.2-3 -> v1.0.2-4
 =================================
 * Allow configuring with a custom pool object
