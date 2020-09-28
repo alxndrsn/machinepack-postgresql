@@ -138,7 +138,7 @@ module.exports = {
       var additionalKeys = Object
         .keys(inputs.meta)
         .filter(function(k) {
-          return k !== 'pool';
+          return !['adapter', 'identity', 'pool', 'url'].includes(k);
         });
       if(additionalKeys.length) {
         console.warn('Unexpected additional config supplied alongside pg pool; these will be ignored:', additionalKeys);
